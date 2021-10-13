@@ -1,16 +1,11 @@
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import Prismic from '@prismicio/client';
-import { HomeContainer } from '../styles/HomeStyles';
+import Header from '../../components/Header';
+import ProjectItem from '../../components/ProjectItem';
+import { ProjectsContainer } from '../../styles/ProjectsStyles';
 
-import HomeHero from '../components/HomeHero';
-import Header from '../components/Header';
-import Experience from '../components/Experience';
-import Projects from '../components/Projects';
-import Knowledge from '../components/Knowledge';
-import ContactForm from '../components/ContactForm';
-import Footer from '../components/Footer';
-import { getPrismicClient } from '../services/prismic';
+import { getPrismicClient } from '../../services/prismic';
 
 interface IProject {
   slug: string;
@@ -21,15 +16,15 @@ interface IProject {
   thumbnail: string;
 }
 
-interface HomeProps {
+interface ProjectProps {
   projects: IProject[];
 }
 
-export default function Home({ projects }: HomeProps) {
+export default function Projects({ projects }: ProjectProps) {
   return (
-    <HomeContainer>
+    <ProjectsContainer>
       <Head>
-        <title>Home | My Portfolio</title>
+        <title>Projects | My Portfolio</title>
         <meta
           name="description"
           content="I'm a frontend engineer and here are some of my projects!"
@@ -45,14 +40,17 @@ export default function Home({ projects }: HomeProps) {
       </Head>
       <Header />
       <main className="container">
-        <HomeHero />
-        <Experience />
-        <Projects projects={projects} />
-        <Knowledge />
-        <ContactForm />
+        {projects.map(project => (
+          <ProjectItem
+            key={project.slug}
+            title={project.title}
+            type={project.type}
+            slug={project.slug}
+            imgUrl={project.thumbnail}
+          />
+        ))}
       </main>
-      <Footer />
-    </HomeContainer>
+    </ProjectsContainer>
   );
 }
 
