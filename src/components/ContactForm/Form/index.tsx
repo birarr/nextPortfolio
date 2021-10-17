@@ -73,6 +73,3 @@ export default function Form() {
     </FormContainer>
   );
 }
-function handleSubmit(e: any) {
-  throw new Error('Function not implemented.');
-}

@@ -8,9 +8,9 @@ function ContactForm() {
       <SectionTitle
         title={
           <>
-            Do you need
+            To contact me
             <br />
-            some Frontend service?
+            for more informations?
           </>
         }
         description={

@@ -9,7 +9,7 @@ function Knowledge() {
   return (
     <>
       <Container>
-        <SectionTitle title="Conhecimento" />
+        <SectionTitle title="Knowledge" />
         <section>
           <KnowledgeItem title="HTML" icon={<AiFillHtml5 />} />
           <KnowledgeItem title="CSS" icon={<FaCss3Alt />} />

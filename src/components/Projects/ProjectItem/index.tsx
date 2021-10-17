@@ -22,7 +22,7 @@ export default function ProjectItem({ title, type, slug, img }: ProjectProps) {
       <button type="button">
         <Link href="/project">
           <a href={`/projects/${slug}`}>
-            Ver mais <AiOutlineRightCircle />
+            See more <AiOutlineRightCircle />
           </a>
         </Link>
       </button>

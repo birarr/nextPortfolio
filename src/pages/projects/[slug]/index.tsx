@@ -16,6 +16,7 @@ interface IProject {
   description: string;
   link: string;
   thumbnail: string;
+  alt: string;
 }
 
 interface ProjectProps {
@@ -46,18 +47,7 @@ export default function Project({ project }: ProjectProps) {
       />
 
       <main>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque
-          tenetur, velit tempora corrupti rem praesentium numquam. Ex atque
-          cupiditate vel, possimus deleniti eveniet, temporibus vero, sint
-          molestias labore eaque voluptates esse numquam nobis minima eligendi
-          consequuntur repellendus enim. Nisi, optio? Debitis reprehenderit
-          reiciendis et tenetur animi quibusdam sit placeat blanditiis. Pariatur
-          cumque ducimus beatae modi saepe ullam natus expedita! Doloribus sed
-          excepturi adipisci praesentium vero assumenda veniam nisi quaerat
-          tempore facilis possimus nam vel quidem totam, tenetur quibusdam
-          cumque quos.
-        </p>
+        <p>{project.alt}</p>
         <button type="button">
           <a href={project.link} target="_blank" rel="noreferrer">
             See online project
@@ -98,8 +88,10 @@ export const getStaticProps: GetStaticProps = async context => {
     type: response.data.type,
     description: response.data.description,
     link: response.data.online_project.url,
-    thumbnail: response.data.thumbnail.url
+    thumbnail: response.data.thumbnail.url,
+    alt: response.data.thumbnail.alt
   };
+
   return {
     props: { project },
     revalidate: 86400

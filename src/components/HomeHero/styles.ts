@@ -8,14 +8,21 @@ export const Container = styled.div`
   justify-content: center;
   margin-top: 5rem;
 
+  .img2 {
+    display: none;
+  }
+
   > img {
     width: 40rem;
     flex: 1;
+  }
 
-    :hover {
-      filter: invert(92%) sepia(50%) saturate(881%) hue-rotate(86deg)
-        brightness(98%) contrast(80%);
-    }
+  .images:hover .img1 {
+    display: none;
+  }
+
+  .images:hover .img2 {
+    display: inherit;
   }
 
   > div {
