@@ -32,7 +32,7 @@ function HomeHero() {
               Function: <span className="blue">Dev Frontend,</span>
             </div>
             <div>
-              Company: <span className="blue">Jungle Devs</span>
+              Company: <span className="blue">Appy Apps</span>
             </div>
             {'\u007D'}
           </CodeItem>
