@@ -9,7 +9,7 @@ function Experience() {
 
       <section>
         <ExperienceItem
-          year=" 2019"
+          year=" 2022"
           title="Dev Frontend"
           description="Frontend dev, working with React, Typescript, Graphql, Redux and Tailwind."
         />
